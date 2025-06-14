@@ -59,4 +59,4 @@ MIT License - Lihat file [LICENSE](LICENSE) untuk detail lebih lanjut.
 
 ## Penulis
 
-Dibuat dengan ❤️ untuk memudahkan kompresi file sehari-hari. 
+Dibuat oleh Iqbal dan Kaysha untuk memudahkan kompresi file sehari-hari. 

@@ -6,6 +6,7 @@
     <title>File Compressor - Kompres File Online</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="scroll-progress"></div>
@@ -246,7 +247,7 @@
             <div class="footer-section">
                 <h4>Bantuan</h4>
                 <ul>
-                    <li><a href="#help">Cara Penggunaan</a></li>
+                    <li><a href="#help">Panduan Penggunaan</a></li>
                     <li><a href="#help">FAQ</a></li>
                     <li><a href="#help">Kontak</a></li>
                 </ul>
@@ -263,6 +264,17 @@
             <p>Mengompres file...</p>
         </div>
     </div>
+
+    <!-- Modal Popup -->
+    <div id="customModal" class="custom-modal" style="display:none;">
+        <div class="custom-modal-content">
+            <span class="custom-modal-close" id="modalCloseBtn">&times;</span>
+            <div id="modalContent">
+                <!-- Konten dinamis akan dimasukkan di sini -->
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Popup -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.1.1/compressor.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>

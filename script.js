@@ -431,4 +431,71 @@ scrollToTop.addEventListener('click', (e) => {
         top: 0,
         behavior: 'smooth'
     });
+});
+
+// Konten untuk modal
+const modalContents = {
+  panduan: `
+    <h2>Panduan Penggunaan</h2>
+    <p>1. Pilih file yang ingin dikompres melalui tombol atau drag & drop ke area yang disediakan.</p>
+    <p>2. Pilih kualitas dan format kompresi sesuai kebutuhan Anda.</p>
+    <p>3. Klik "Kompres File" dan tunggu proses selesai.</p>
+    <p>4. Unduh file hasil kompresi melalui tombol unduh.</p>
+    <ul>
+      <li>Format yang didukung: JPG, PNG, PDF</li>
+      <li>Maksimal ukuran file: 10 MB</li>
+    </ul>
+  `,
+  faq: `
+    <h2>FAQ</h2>
+    <p><b>Q:</b> Apakah file saya aman?</p>
+    <p><b>A:</b> Ya, file Anda dihapus otomatis setelah 1 jam.</p>
+    <p><b>Q:</b> Apakah ada batasan jumlah file?</p>
+    <p><b>A:</b> Tidak, Anda dapat mengompres file sebanyak yang Anda mau.</p>
+    <p><b>Q:</b> Apakah layanan ini gratis?</p>
+    <p><b>A:</b> Ya, layanan ini 100% gratis.</p>
+  `,
+  kontak: `
+    <h2>Kontak</h2>
+    <p>Jika Anda membutuhkan bantuan lebih lanjut, silakan hubungi kami melalui email:</p>
+    <p><a href='mailto:kayzaalvy1214@gmail.com'>kayzaalvy1214@gmail.com</a></p>
+    <p>atau hubungi nomor WhatsApp <a href='https://wa.me/6283162555636' target='_blank'>083162555636</a></p>
+  `
+};
+
+// Modal logic
+const modal = document.getElementById('customModal');
+const modalContent = document.getElementById('modalContent');
+const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+// Event untuk tombol help-link
+const helpLinks = document.querySelectorAll('.help-link');
+helpLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    let text = this.textContent.trim().toLowerCase();
+    if (text.includes('panduan')) {
+      modalContent.innerHTML = modalContents.panduan;
+    } else if (text.includes('faq')) {
+      modalContent.innerHTML = modalContents.faq;
+    } else if (text.includes('kontak') || text.includes('hubungi')) {
+      modalContent.innerHTML = modalContents.kontak;
+    }
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+// Event untuk close modal
+modalCloseBtn.addEventListener('click', function() {
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+});
+
+// Tutup modal jika klik di luar konten
+window.addEventListener('click', function(e) {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
 }); 
