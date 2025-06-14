@@ -329,8 +329,10 @@ nav {
 
 .section-header h2 {
     font-size: 2rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: 600;
     margin-bottom: 0.5rem;
+    text-shadow: 0 1px 2px rgba(37, 99, 235, 0.1);
 }
 
 .section-header p {
@@ -394,9 +396,10 @@ nav {
 
 .upload-text h2 {
     font-size: 1.8rem;
-    color: var(--text-color);
+    color: var(--primary-color);
     margin-bottom: 1rem;
     font-weight: 600;
+    text-shadow: 0 1px 2px rgba(37, 99, 235, 0.1);
 }
 
 .upload-text p {
@@ -1451,4 +1454,15 @@ html {
     to {
         transform: scaleX(1);
     }
+}
+
+/* Override untuk h2 di dalam section tertentu yang membutuhkan warna berbeda */
+.hero h2,
+.section-header h2,
+.upload-text h2 {
+    color: inherit;
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: initial;
 } 
