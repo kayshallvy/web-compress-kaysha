@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Compressor - Kompres File Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    <a href="#" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-compress-alt"></i>
+                <span>File Compressor</span>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="active">Beranda</a>
+                <a href="#compress">Kompres File</a>
+                <a href="#features">Fitur</a>
+                <a href="#help">Bantuan</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Kompres File Online</h1>
+                <p>Kompres gambar, PDF dengan mudah dan cepat. Gratis, aman, dan tanpa batas.</p>
+                <a href="#compress" class="cta-button">
+                    Mulai Kompres
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <section id="compress" class="upload-section">
+            <div class="section-header">
+                <h2>Kompres File Anda</h2>
+                <p>Pilih file yang ingin dikompres atau seret ke area di bawah</p>
+            </div>
+            <div class="upload-container" id="dropZone">
+                <div class="upload-content">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div class="upload-text">
+                        <h2>Pilih file atau tarik ke sini</h2>
+                        <p>Format yang didukung: JPG, PNG, PDF</p>
+                        <p>Maksimal ukuran file: 10 MB</p>
+                    </div>
+                    <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.pdf" hidden>
+                    <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-folder-open"></i>
+                        Pilih File
+                    </button>
+                </div>
+                <div class="file-details" id="fileDetails">
+                    <div class="selected-file" id="selectedFile">
+                        <div class="file-icon">
+                            <i class="fas fa-file"></i>
+                        </div>
+                        <div class="file-info">
+                            <h3 id="fileName">nama-file</h3>
+                            <p id="fileSize">Ukuran: 0 MB</p>
+                            <p id="fileType">Tipe: -</p>
+                        </div>
+                        <button class="remove-file" id="removeFile">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="compression-options" id="compressionOptions" style="display: none;">
+            <div class="section-header">
+                <h2>Opsi Kompresi</h2>
+                <p>Pilih kualitas kompresi yang sesuai dengan kebutuhan Anda</p>
+            </div>
+            <div class="options-container">
+                <div class="quality-options">
+                    <div class="quality-option" data-quality="85">
+                        <i class="fas fa-star"></i>
+                        <h4>Kualitas Tinggi</h4>
+                        <p>Kompresi ringan, kualitas terbaik</p>
+                    </div>
+                    <div class="quality-option" data-quality="50">
+                        <i class="fas fa-star-half-alt"></i>
+                        <h4>Kualitas Sedang</h4>
+                        <p>Kompresi seimbang</p>
+                    </div>
+                    <div class="quality-option" data-quality="5">
+                        <i class="fas fa-star"></i>
+                        <h4>Kualitas Rendah</h4>
+                        <p>Ukuran file terkecil</p>
+                    </div>
+                </div>
+
+                <div class="format-options" id="formatOptions" style="display: none;">
+                    <h4>Format Output</h4>
+                    <div class="format-buttons">
+                        <button class="format-btn selected" data-format="original">
+                            <i class="fas fa-file"></i>
+                            <span>Format Asli</span>
+                        </button>
+                        <button class="format-btn" data-format="jpg">
+                            <i class="fas fa-file-image"></i>
+                            <span>JPG</span>
+                        </button>
+                        <button class="format-btn" data-format="png">
+                            <i class="fas fa-file-image"></i>
+                            <span>PNG</span>
+                        </button>
+                        <button class="format-btn" data-format="webp">
+                            <i class="fas fa-file-image"></i>
+                            <span>WebP</span>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="compress-btn" id="compressBtn" disabled>
+                    Kompres File
+                </button>
+            </div>
+        </section>
+
+        <section class="result-section" id="resultSection" style="display: none;">
+            <div class="section-header">
+                <h2>Hasil Kompresi</h2>
+                <p>File Anda telah berhasil dikompres</p>
+            </div>
+            <div class="result-container">
+                <div class="file-info">
+                    <div class="file-icon">
+                        <i class="fas fa-file" id="fileIcon"></i>
+                    </div>
+                    <div class="file-details">
+                        <h3 id="fileName">nama-file</h3>
+                        <p id="fileSize">Ukuran: 0 MB</p>
+                    </div>
+                </div>
+                <div class="compression-result">
+                    <div class="result-details">
+                        <div class="size-reduction">
+                            <span id="reductionPercentage">0%</span>
+                            <p>Pengurangan ukuran</p>
+                        </div>
+                        <div class="new-size">
+                            <span id="newFileSize">0 MB</span>
+                            <p>Ukuran baru</p>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="download-btn" id="downloadBtn">
+                            <i class="fas fa-download"></i> Unduh
+                        </button>
+                        <button class="compress-again-btn" id="compressAgainBtn">
+                            <i class="fas fa-redo"></i> Kompres Lagi
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="section-header">
+                <h2>Mengapa Memilih Kami?</h2>
+                <p>Fitur-fitur unggulan yang membuat kami berbeda</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Aman & Privat</h3>
+                    <p>File Anda dihapus secara otomatis setelah 1 jam</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Cepat & Mudah</h3>
+                    <p>Kompres file dalam hitungan detik</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-infinity"></i>
+                    <h3>Tanpa Batas</h3>
+                    <p>Kompres file sebanyak yang Anda inginkan</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsif</h3>
+                    <p>Bekerja di semua perangkat</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="help" class="help-section">
+            <div class="section-header">
+                <h2>Bantuan & Panduan</h2>
+                <p>Pelajari cara menggunakan layanan kami</p>
+            </div>
+            <div class="help-grid">
+                <div class="help-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Panduan Penggunaan</h3>
+                    <p>Pelajari cara mengompres file dengan mudah</p>
+                    <a href="#" class="help-link">Baca Panduan</a>
+                </div>
+                <div class="help-card">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>FAQ</h3>
+                    <p>Pertanyaan yang sering diajukan</p>
+                    <a href="#" class="help-link">Lihat FAQ</a>
+                </div>
+                <div class="help-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Kontak</h3>
+                    <p>Hubungi kami untuk bantuan</p>
+                    <a href="#" class="help-link">Hubungi Kami</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>File Compressor</h4>
+                <p>Kompres file online dengan mudah dan cepat</p>
+            </div>
+            <div class="footer-section">
+                <h4>Fitur</h4>
+                <ul>
+                    <li><a href="#compress">Kompres Gambar</a></li>
+                    <li><a href="#compress">Kompres PDF</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Bantuan</h4>
+                <ul>
+                    <li><a href="#help">Cara Penggunaan</a></li>
+                    <li><a href="#help">FAQ</a></li>
+                    <li><a href="#help">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 File Compressor. Iqbal Kaysha.</p>
+        </div>
+    </footer>
+
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Mengompres file...</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.1.1/compressor.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
