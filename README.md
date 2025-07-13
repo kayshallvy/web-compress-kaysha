@@ -3,7 +3,7 @@
 Aplikasi web untuk kompresi file yang mudah digunakan dan modern. DataCompress memungkinkan Anda untuk mengompres berbagai jenis file seperti gambar (JPG, PNG, GIF), dan PDFdengan mudah.
 
 ## Tampilan UI
-![Tampilan UI](images/screenshot.png)
+![Tampilan UI](images/ui.png)
 
 ## Flowchart
 ![Flowchart](images/ppp.png)
@@ -11,7 +11,6 @@ Aplikasi web untuk kompresi file yang mudah digunakan dan modern. DataCompress m
 ## Fitur
 
 - 🖼️ Kompresi gambar dengan berbagai opsi kualitas
-- 📄 Dukungan untuk file PDF dan dokumen Word
 - 🎯 Pengaturan ukuran maksimum file
 - 🔄 Konversi format gambar (JPG, PNG, WebP)
 - 📱 Antarmuka responsif dan modern
@@ -54,6 +53,9 @@ Aplikasi web untuk kompresi file yang mudah digunakan dan modern. DataCompress m
 1. Clone repositori ini
 2. Buka file `index.html` di browser lokal
 3. Atau gunakan server lokal seperti Live Server di VS Code
+
+## Demo
+![Demo]()
 
 ## Kontribusi
 
