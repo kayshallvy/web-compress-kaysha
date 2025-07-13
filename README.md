@@ -56,8 +56,8 @@ File Compressor memungkinkan Anda untuk mengompres berbagai jenis file seperti g
 2. Buka file `index.html` di browser lokal
 3. Atau gunakan server lokal seperti Live Server di VS Code
 
-## Demo
-[Demo]([URL](https://kayshallvy.github.io/web-compress-kaysha/))
+🌐 **Live Demo:**  
+👉 [Klik di sini untuk membuka aplikasi](https://kayshallvy.github.io/web-compress-kaysha/)
 
 ## Kontribusi
 
