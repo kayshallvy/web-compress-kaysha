@@ -8,7 +8,7 @@ File Compressor memungkinkan Anda untuk mengompres berbagai jenis file seperti g
 ![Tampilan UI](ui.jpeg)
 
 ## Flowchart
-![Flowchart](ppp.png)
+![Flowchart](pp.png)
 
 ## Fitur
 
@@ -57,7 +57,7 @@ File Compressor memungkinkan Anda untuk mengompres berbagai jenis file seperti g
 3. Atau gunakan server lokal seperti Live Server di VS Code
 
 ## Demo
-![Demo]()
+![Demo](https://kayshallvy.github.io/web-compress-kaysha/)
 
 ## Kontribusi
 
