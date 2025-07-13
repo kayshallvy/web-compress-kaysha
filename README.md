@@ -1,6 +1,12 @@
 # DataCompress
 
-Aplikasi web untuk kompresi file yang mudah digunakan dan modern. DataCompress memungkinkan Anda untuk mengompres berbagai jenis file seperti gambar (JPG, PNG, GIF), PDF, dan dokumen Word (DOC, DOCX) dengan mudah.
+Aplikasi web untuk kompresi file yang mudah digunakan dan modern. DataCompress memungkinkan Anda untuk mengompres berbagai jenis file seperti gambar (JPG, PNG, GIF), dan PDFdengan mudah.
+
+## Tampilan UI
+![Tampilan UI](images/screenshot.png)
+
+## Flowchart
+![Flowchart](images/ppp.png)
 
 ## Fitur
 
